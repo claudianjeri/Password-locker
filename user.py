@@ -1,4 +1,4 @@
-class LogIn:
+class User:
     user_createaccount= []
 
     def __init__(self, first_name, last_name, email, password):
