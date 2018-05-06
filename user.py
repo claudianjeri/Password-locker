@@ -8,4 +8,7 @@ class User:
         self.email = email
         self.password = password
 
+    def save_account(self):
+        User.user_createaccount.append(self)
+
     

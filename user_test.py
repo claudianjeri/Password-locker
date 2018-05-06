@@ -21,5 +21,12 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.create_account.email, "claudianjeri04@gmail.com")
         self.assertEqual(self.create_account.first_name, "03134323")
 
+    def test_first_name(self):
+        self.create_account.save_account()
+        self.assertEqual(len(User.user_createaccount), 1)
+
     
+
+if __name__ == '__main__':
+    unittest.main()
     
