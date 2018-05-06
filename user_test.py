@@ -42,7 +42,7 @@ class TestUser(unittest.TestCase):
 #<---Second Class for credentials---->#
 from user import Credentials
 
-class TestlogIn(unittest.TestCase):
+class TestCredentials(unittest.TestCase):
     
     def setUp(self):
         
@@ -50,13 +50,16 @@ class TestlogIn(unittest.TestCase):
 
     def tearDown(self):
             
-        Credentials.user_createaccount = []
+        Credentials.user_credentials = []
 
     def test_init(self):
         self.assertEqual(self.user_credential.account_name, "claudianjeri")
         self.assertEqual(self.user_credential.email, "claudianjeri04@gmail.com")
         self.assertEqual(self.user_credential.password, "claudia04")
-
+    
+    def test_save_credentials(self):
+        self.user_credential.save_credentials()
+        self.assertEqual(len(Credentials.user_credentials), 1)
 
 if __name__ == '__main__':
     unittest.main()
