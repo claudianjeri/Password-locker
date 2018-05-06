@@ -12,3 +12,14 @@ class TestUser(unittest.TestCase):
     def setUp(self):#Setup Method is for defining instructions that will be executed before each test method.
         self.create_account = User("Claudia", "Njeri", "claudianjeri04@gmail", "claudia")
 
+    # def tearDown(self):
+    #     User.user_createaccount = []
+
+    def test_init(self):
+        self.assertEqual(self.create_account.first_name, "Claudia")
+        self.assertEqual(self.create_account.last_name, "Njeri")
+        self.assertEqual(self.create_account.email, "claudianjeri04@gmail.com")
+        self.assertEqual(self.create_account.first_name, "03134323")
+
+    
+    
