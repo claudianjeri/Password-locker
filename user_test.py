@@ -3,6 +3,7 @@ import unittest #importing the unittest module
 #<---First Class User---->#
 from user import User #import the class from your other file.
 
+
 class TestUser(unittest.TestCase):
     '''
     TestUser is a subclass of the parent class.
@@ -37,6 +38,12 @@ class TestUser(unittest.TestCase):
 
         account_exists = User.account_exists("claudianjeri04@gmail.com", "claudia")
         self.assertTrue(account_exists)
+
+#<---Second Class for credentials---->#
+from user import Credentials
+
+    
+
 
 if __name__ == '__main__':
     unittest.main()
