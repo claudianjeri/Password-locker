@@ -69,14 +69,26 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.user_credentials), 2)
     
     def test_delete_credentials(self):
-        self.user_credential.save_credentials
-        test_Credentials =Credentials("account_name", "email", "password")
+        self.user_credential.save_credentials()
+        test_Credentials = Credentials("account_name", "email", "password")
         test_Credentials.save_credentials()
 
         self.assertEqual(len(Credentials.user_credentials), 1)
 
     def test_display_credentials(self):
         self.assertEqual(Credentials.display_credentials(),Credentials.user_credentials)
+
+    def test_find_account(self):
+        self.user_credential.save_credentials()
+
+        test_Credentials = Credentials("claudianjeri", "claudianjeri04@gmail.com", "claudia04" )
+        test_Credentials.save_credentials()
+
+        found_account = Credentials.find_by_account_name("claudianjeri")
+
+        self.assertEqual(found_account.email,test_Credentials.email)
+
+
 
     
     
