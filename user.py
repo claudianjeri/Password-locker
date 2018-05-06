@@ -21,3 +21,7 @@ class User:
                 return True
         
         return False  
+
+class Credentials:
+
+    user_credentials = []
