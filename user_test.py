@@ -88,7 +88,9 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(found_account.email,test_Credentials.email)
 
-
+# import pyperclip
+#     def test_copy_email(self):
+        
 
     
     
