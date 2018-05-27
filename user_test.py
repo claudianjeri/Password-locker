@@ -1,5 +1,5 @@
 import unittest #importing the unittest module
-
+import pyperclip
 #<---First Class User---->#
 from user import User #import the class from your other file.
 
@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
         test to auto-generate password
         '''
         self.new_account.generate_password() #generating new password
-        self.assertEqual(self.accountr.pwd,"pwd")
+        self.assertEqual(self.new_account.password,"password")
 
 #<---Second Class for credentials---->#
 from user import Credentials
@@ -96,11 +96,14 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(found_account.email,test_Credentials.email)
 
-# import pyperclip
-#     def test_copy_email(self):
-        
-
+    def test_copy_account(self):
+        '''
+        Test to confirm that we are copying a credential from the accounts found
+        '''
+        self.user_credential.save_credentials()
+        Credentials.copy_credential("claudianjeri", "claudianjeri04@gmail.com", "claudia04")
     
+        self.assertEqual(self.user_credential.account_name, email, password,pyperclip.paste())
     
 
 if __name__ == '__main__':
