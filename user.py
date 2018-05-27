@@ -1,3 +1,4 @@
+
 class User:
     
     user_createaccount = []
@@ -12,6 +13,7 @@ class User:
     def save_account(self):
         User.user_createaccount.append(self)
 
+  
     @classmethod
     def account_exists(cls, email, password):
 

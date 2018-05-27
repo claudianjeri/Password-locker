@@ -11,6 +11,7 @@ def save_account(account):
         
         account.save_account()
 
+
 # def log_in()
 
     
@@ -32,14 +33,9 @@ def save_multiple_credentials(account):
 def display_credentials():
         return Credentials.display_credentials()
 
-def delete_credentials():
-        Credentials.delete_credentials
+def delete_credentials(credential):
+        credential.delete_credentials()
 
-
-
-
-
-      
 
 def main():
     print("Hello, I'm PaLo..otherwise known as Password Locker.I save your passwords for various accounts. Before we get to that part, I will need you to create an account or Log in:")
@@ -77,12 +73,11 @@ def main():
     #     print('\n')
     #     print("Email Address:")
 
-    print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, ex -exit the credential list")
-    short_code = input().lower()
+    print("Use these short codes : cc - create a new credential, dc - display credentials, dl - delete a credential, fc -find a credential, ex -exit the credential list")
+    short_code2 = input().lower()
     print('\n')
-    if short_code == 'cc':
+    if short_code2 == 'cc':
         print("New Credential")
-        print("-"*10)
         print('\n')
 
         print("Account Name")
@@ -95,17 +90,21 @@ def main():
 
         print("Account's Password")
         password = input()
+        print('\n')
 
         save_credentials(create_credential(account_name, email, password))
-    
-    
-    elif short_code == 'dc':
+        print(f"Credential Created Successfully!! {account_name} {email} {password}")
+        print('\n')
+
+    elif short_code2 == 'dc':
+        print(display_credentials())
         if display_credentials():
-                print("Here's your vault") 
+                print("Here's your vault {first_name}") 
                 print('\n')
+
                 for credential in display_credentials():
                         print(f"{credential.account_name} {credential.email} {credential.password}")
-                print('\n')
+                        print('\n')
         
         else:
                 print('\n')

@@ -39,6 +39,13 @@ class TestUser(unittest.TestCase):
         account_exists = User.account_exists("claudianjeri04@gmail.com", "claudia")
         self.assertTrue(account_exists)
 
+    def test_generate_password(self):
+        '''
+        test to auto-generate password
+        '''
+        self.new_account.generate_password() #generating new password
+        self.assertEqual(self.accountr.pwd,"pwd")
+
 #<---Second Class for credentials---->#
 from user import Credentials
 
@@ -76,6 +83,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.user_credentials), 1)
 
     def test_display_credentials(self):
+        print(Credentials.display_credentials())
         self.assertEqual(Credentials.display_credentials(),Credentials.user_credentials)
 
     def test_find_account(self):
