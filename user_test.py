@@ -101,9 +101,9 @@ class TestCredentials(unittest.TestCase):
         Test to confirm that we are copying a credential from the accounts found
         '''
         self.user_credential.save_credentials()
-        Credentials.copy_credential("claudianjeri", "claudianjeri04@gmail.com", "claudia04")
+        Credentials.copy_credential("claudia04")
     
-        self.assertEqual(self.user_credential.account_name, email, password,pyperclip.paste())
+        self.assertEqual(self.user_credential.password,pyperclip.paste())
     
 
 if __name__ == '__main__':

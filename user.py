@@ -1,5 +1,5 @@
 import random
-
+import pyperclip
 class User:
     
     user_createaccount = []
@@ -20,10 +20,10 @@ class User:
         '''
         chars = '1234567890abcdefghijklmnop?/@-' #characters to choose from
         length = int(input("Enter the length of password you want: "))
-        pwd = ''
-        for c in range(length):
-            pwd += random.choice(chars) #generate random password
-        print (pwd)
+        password = ''
+        for chars in range(length):
+            password += random.choice(chars) #generate random password
+        print (password)
 
     @classmethod
     def account_exists(cls, email, password):
@@ -62,3 +62,8 @@ class Credentials:
             if account.account_name == account_name:
                 return account
                 
+
+    @classmethod
+    def copy_credential(cls,account_name):
+        credential_found = Credentials.find_by_account_name(account_name)
+        pyperclip.copy(credential_found.password)
