@@ -83,7 +83,6 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.user_credentials), 1)
 
     def test_display_credentials(self):
-        print(Credentials.display_credentials())
         self.assertEqual(Credentials.display_credentials(),Credentials.user_credentials)
 
     def test_find_account(self):

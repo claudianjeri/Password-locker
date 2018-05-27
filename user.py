@@ -50,10 +50,7 @@ class Credentials:
     def delete_credentials(self):
         Credentials.user_credentials.remove(self)
 
-    @classmethod
-    def display_credentials(cls):
-
-        return cls.user_credentials
+   
 
     @classmethod
     def find_by_account_name(cls,account_name):
@@ -67,3 +64,8 @@ class Credentials:
     def copy_credential(cls,account_name):
         credential_found = Credentials.find_by_account_name(account_name)
         pyperclip.copy(credential_found.password)
+        
+    @classmethod
+    def display_credentials(cls):
+
+        return cls.user_credentials
